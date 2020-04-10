@@ -24,7 +24,7 @@ namespace MuseiNews.Tasks
     {
         private System.Timers.Timer _timer;
         private WebClient client = new WebClient();
-        private readonly CronExpression _expression = CronExpression.Parse("*/1 * * * *");
+        private readonly CronExpression _expression = CronExpression.Parse("*/5 * * * *");
         private readonly TimeZoneInfo _timeZoneInfo = TimeZoneInfo.Local;
 
         private readonly IServiceScopeFactory _scopeFactory;
