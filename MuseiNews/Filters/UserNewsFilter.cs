@@ -21,11 +21,11 @@ namespace MuseiNews.Filters
         {
             actionContext.HttpContext.Request.Headers.TryGetValue("Authorization", out Microsoft.Extensions.Primitives.StringValues clientToken);
             int clientId = 0;
-            int internalUserId = 0;
+            string internalUserId = "";
             try
             {
                 clientId = int.Parse(actionContext.ActionArguments["clientId"].ToString());
-                internalUserId = int.Parse(actionContext.ActionArguments["internalUserId"].ToString());
+                internalUserId = actionContext.ActionArguments["internalUserId"].ToString();
             }
             catch
             {

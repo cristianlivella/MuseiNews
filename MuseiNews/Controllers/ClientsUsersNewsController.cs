@@ -25,14 +25,14 @@ namespace MuseiNews.Controllers
 
         // GET: clients/{clientId}/users/{internalUserId}/news
         [HttpGet]
-        public ActionResult<IEnumerable<News>> GetNews(int userId, int clientId, int internalUserId)
+        public ActionResult<IEnumerable<News>> GetNews(int userId, int clientId, string internalUserId)
         {
             return GetNewsList(userId).ToList();
         }
 
         // GET: clients/{clientId}/users/{internalUserId}/news/notRead
         [HttpGet("notRead")]
-        public ActionResult<IEnumerable<News>> GetNewsNotRead(int userId, int clientId, int internalUserId)
+        public ActionResult<IEnumerable<News>> GetNewsNotRead(int userId, int clientId, string internalUserId)
         {
             var news = GetNewsList(userId);
             return news.Where(n => n.Read == false).ToList();
@@ -40,7 +40,7 @@ namespace MuseiNews.Controllers
 
         // GET: clients/{clientId}/users/{internalUserId}/news/{id}
         [HttpGet("{id}")]
-        public ActionResult<News> GetSingleNews(int userId, int clientId, int internalUserId, int id)
+        public ActionResult<News> GetSingleNews(int userId, int clientId, string internalUserId, int id)
         {
             var news = _context.News.Find(id);
             if (news == null)
@@ -54,7 +54,7 @@ namespace MuseiNews.Controllers
 
         // PUT: clients/{clientId}/users/{internalUserId}/news/{id}
         [HttpPut("{id}")]
-        public IActionResult PutNews(int id, int userId, int clientId, int internalUserId, News news)
+        public IActionResult PutNews(int id, int userId, int clientId, string internalUserId, News news)
         {
             if (id != news.Id)
             {
