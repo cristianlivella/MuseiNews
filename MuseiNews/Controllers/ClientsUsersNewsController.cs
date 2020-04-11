@@ -30,8 +30,8 @@ namespace MuseiNews.Controllers
             return GetNewsList(userId).ToList();
         }
 
-        // GET: clients/{clientId}/users/{internalUserId}/news/notRead
-        [HttpGet("notRead")]
+        // GET: clients/{clientId}/users/{internalUserId}/news/unread
+        [HttpGet("unread")]
         public ActionResult<IEnumerable<News>> GetNewsNotRead(int userId, int clientId, string internalUserId)
         {
             var news = GetNewsList(userId);
