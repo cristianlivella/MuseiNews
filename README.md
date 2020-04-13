@@ -1,5 +1,5 @@
 # MuseiNews
-Simple ASP.NET Core news API: a cron job takes the news from an RSS feed (currently [https://www.intopic.it/arte/musei/](https://www.intopic.it/arte/musei/), but can be easily changed by editing [Tasks/UpdateNews.cs](Tasks/UpdateNews.cs)) and provides them at `/news` endpoint. Designed for use with client applications.
+Simple ASP.NET Core news API: a cron job takes the news from an RSS feed (currently [https://www.intopic.it/rss/arte/musei/](https://www.intopic.it/rss/arte/musei/), but can be easily changed by editing [Tasks/UpdateNews.cs](Tasks/UpdateNews.cs)) and provides them at `/news` endpoint. Designed for use with client applications.
 
 Made during school year 2019/2020 at [ITIS Paleocapa](https://itispaleocapa.edu.it).
 
