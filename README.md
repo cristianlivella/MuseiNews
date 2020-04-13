@@ -13,11 +13,11 @@ Generates a new pair of clientId and clientToken.
 
 ### With authentication
 `GET /clients/{clientId}/users/{userId}/news`  
-Return all news, in ascending timestamp order, with additional *read* boolean field, *true* if the user had read the news, *false* if not.  
+Returns all news, in ascending timestamp order, with additional *read* boolean field, *true* if the user had read the news, *false* if not.  
 Note: userId is a string and should be unique for the client, not globally.
 
 `GET /clients/{clientId}/users/{userId}/news/{newsId}`  
-Return a single news with user related *read* field.
+Returns a single news with user related *read* field.
 
 `PUT /clients/{clientId}/users/{userId}/news/{newsId}`  
 Edits the *read* field, it expects to receive in the body the news object with the *read* field edited.
